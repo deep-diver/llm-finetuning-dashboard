@@ -1,0 +1,16 @@
+{
+  "run_id": "run_001",
+  "metrics_comparison": {
+    "test_loss": {
+      "baseline": 4.2152,
+      "fine_tuned": 1.3524,
+      "improvement_pct": 67.9
+    },
+    "instruction_following_score": {
+      "baseline": 0.5,
+      "fine_tuned": 0.3659517769413752,
+      "improvement_pct": -26.80964461172496
+    }
+  },
+  "regressions_detected": 3
+}

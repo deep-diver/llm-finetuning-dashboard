@@ -1,0 +1,20 @@
+{
+  "parent_run_id": "run_001",
+  "proposed_run_id": "run_002",
+  "rationale": "Adaptive selection: chose unexplored combination most distinct from worst-performing run.",
+  "current_avg_rouge_l": 0.0,
+  "adjustments": {
+    "learning_rate": 0.0005,
+    "batch_size": 1,
+    "epochs": 1,
+    "warmup_steps": 5,
+    "data_mix": {
+      "use_synthetic_data": false,
+      "synthetic_data_ratio": 0.0
+    }
+  },
+  "focus_areas": [
+    "loss_trajectory",
+    "rouge_l_improvement"
+  ]
+}

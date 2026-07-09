@@ -1,0 +1,45 @@
+{
+  "run_id": "run_004",
+  "evaluation_steps": 5,
+  "loss_slope": -0.05,
+  "estimated_val_loss": 4.75,
+  "format_compliance_rate": 1.0,
+  "sample_generations": [
+    {
+      "instruction": "What is a verb?",
+      "expected_response": "A verb is an action word that describes an activity.  Examples of verbs are the following: swimming, hiking, biking, roller skating, or skydiving.  All of these single and combination word examples are tied to an activity that any living thing can do.  For example, a dog can bike ride with a human when the human is pedaling the bike.  Verb use is not limited to humans or people only but applies to all living things.",
+      "model_generation": "A verb is a word that expresses an action, occurrence, or state of being. It is a fundamental part of a sentence, and it typically follows an object or a subject. Verbs can be action verbs, linking verbs, or helping verbs, and they can be used to convey different types of relationships between people,",
+      "is_correct_format": true
+    },
+    {
+      "instruction": "If I have more pieces at the time of stalemate, have I won?",
+      "expected_response": "No. \nStalemate is a drawn position. It doesn't matter who has captured more pieces or is in a winning position",
+      "model_generation": "Yes, having more pieces at the time of stalemate means you have won. In chess, a stalemate is a situation where neither player can make a move that would lead to a win or a loss, and the game ends in a draw. When a player is in a stalemate, they have the opportunity to",
+      "is_correct_format": true
+    },
+    {
+      "instruction": "Given a reference text about Lollapalooza, where does it take place, who started it and what is it?",
+      "expected_response": "Lollapalooze is an annual musical festival held in Grant Park in Chicago, Illinois. It was started in 1991 as a farewell tour by Perry Farrell, singe of the group Jane's Addiction. The festival includes an array of musical genres including alternative rock, heavy metal, punk rock, hip hop, and electronic dance music. The festivals welcomes an estimated 400,000 people each year and sells out annually. Some notable headliners include: the Red Hot Chili Peppers, Chance the Rapper, Metallica, and Lady Gage. Lollapalooza is one of the largest and most iconic festivals in the world and a staple of Chicago.",
+      "model_generation": "Here's the rest of the text:\n\nThe festival was conceived and created by Perry Farrell, singer of the group Jane's Addiction. The first Lollapalooza tour took place in 1991, and it was a farewell tour for Jane's Addiction. The tour was a huge success, and it helped to",
+      "is_correct_format": true
+    },
+    {
+      "instruction": "What is the future for human?",
+      "expected_response": "This is a very wide open question. It could be two directions. One direction is that human would just disappear like the dinosaur.  One direction is that human would become a species like a god. For the first direction, it may be caused by many situations. e.g. Nuclear war from WW3, extreme climate change. For the other direction, reproduced energy is ready, all cancers can be cured, everything can be done with robot with AI, human life is unlimited.",
+      "model_generation": "The future of humanity is a complex and multifaceted topic that has been debated by experts and scholars for centuries. While it's difficult to predict with certainty, I'll provide an overview of some potential trends and possibilities.\n\n**Positive trends:**\n\n1. **Advances in medicine and technology**: Continued progress in medical research",
+      "is_correct_format": true
+    },
+    {
+      "instruction": "What is a kite?",
+      "expected_response": "A kite is a toy that can be be purchased in a store or a specialty shop.  It is a craft that is lighter an air that is tied to a string that you can fly on wind currents.  The kite has wings that react against the air to create lift enabling it to fly.  You can fly a kite at a park or an open area, and you will want to make sure there are no power lines nearby to be safe when flying the kite.",
+      "model_generation": "A kite is a type of flying object that is typically made of lightweight materials, such as paper, fabric, or plastic, and is designed to fly through the air with its tail streaming behind it. Kites are often used for recreational purposes, such as flying at parks, beaches, or other outdoor locations.\n\nThe basic",
+      "is_correct_format": true
+    }
+  ],
+  "suggest_full_run": true,
+  "candidate_adjustments": {
+    "learning_rate": 0.0002,
+    "batch_size": 4,
+    "lora_rank": 8
+  }
+}

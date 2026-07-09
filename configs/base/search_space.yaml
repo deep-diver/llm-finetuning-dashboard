@@ -1,0 +1,40 @@
+# Hyperparameter Search Space Configuration
+# Used by run_auto_research.sh to drive the automated tuning loop
+
+search:
+  # Tuning budget constraints (from evaluation.yaml)
+  max_tuning_runs: 20                      # Total number of search iterations
+  max_parallel_experiments_per_param: 10   # Max parallel trials per hyperparameter
+  max_target_hyperparameters: 10           # Max number of distinct hyperparameters to search
+
+  # Strategy: random (for now; can extend to bayesian)
+  strategy: "random"
+
+  # Early stopping: stop if loss hasn't improved by this fraction over last N runs
+  early_stopping:
+    enabled: true
+    patience_runs: 5          # Stop if no improvement over last 5 runs
+    min_delta: 0.01           # Minimum relative improvement to count as progress
+
+  # Selection metric for best experiment
+  selection_metric: "avg_rouge_l"   # Options: avg_rouge_l, final_loss, compliance_rate
+
+  # Hyperparameter search space
+  # Each entry defines the candidate values to explore
+  hyperparameters:
+
+    learning_rate:
+      values: [5.0e-5, 1.0e-4, 2.0e-4, 5.0e-4]
+      default: 2.0e-4
+
+    batch_size:
+      values: [1, 2, 4]
+      default: 1
+
+    epochs:
+      values: [1, 2, 3]
+      default: 1
+
+    warmup_steps:
+      values: [5, 10, 20]
+      default: 10

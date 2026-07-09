@@ -1,0 +1,2 @@
+{"instruction": "Write a JSON object with a 'status' key set to 'active'.", "context": "", "response": "{\"status\": \"active\"}"}
+{"instruction": "Output only JSON structure containing 'items' list.", "context": "", "response": "{\"items\": []}"}

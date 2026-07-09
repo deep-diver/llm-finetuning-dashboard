@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DatasetReport",
+  "type": "object",
+  "properties": {
+    "dataset_name": { "type": "string" },
+    "source_url": { "type": "string" },
+    "splits": {
+      "type": "object",
+      "properties": {
+        "train": {
+          "type": "object",
+          "properties": {
+            "num_samples": { "type": "integer" },
+            "path": { "type": "string" }
+          },
+          "required": ["num_samples", "path"]
+        },
+        "valid": {
+          "type": "object",
+          "properties": {
+            "num_samples": { "type": "integer" },
+            "path": { "type": "string" }
+          },
+          "required": ["num_samples", "path"]
+        },
+        "test": {
+          "type": "object",
+          "properties": {
+            "num_samples": { "type": "integer" },
+            "path": { "type": "string" }
+          },
+          "required": ["num_samples", "path"]
+        }
+      },
+      "required": ["train", "valid", "test"]
+    },
+    "statistics": {
+      "type": "object",
+      "properties": {
+        "total_records": { "type": "integer" },
+        "duplicate_count": { "type": "integer" },
+        "format_error_count": { "type": "integer" },
+        "leakage_detected": { "type": "boolean" },
+        "mean_instruction_tokens": { "type": "number" },
+        "mean_response_tokens": { "type": "number" }
+      },
+      "required": ["total_records", "duplicate_count", "format_error_count", "leakage_detected"]
+    }
+  },
+  "required": ["dataset_name", "splits", "statistics"]
+}

@@ -1,0 +1,23 @@
+# Base Dataset Configuration
+dataset:
+  name: "dolly-15k-sample"
+  source_huggingface: "databricks/databricks-dolly-15k"
+  sample_size: 500  # Small subset for fast tutorial iteration
+  seed: 42
+  train_path: "data/processed/train.jsonl"
+  valid_path: "data/processed/valid.jsonl"
+  
+  # Split proportions
+  splits:
+    train_ratio: 0.8
+    valid_ratio: 0.1
+    test_ratio: 0.1
+    
+  # File configurations
+  raw_dir: "data/raw/"
+  processed_dir: "data/processed/"
+  synthetic_dir: "data/synthetic/"
+  
+  # Formatting templates
+  format_template: "instruction_response"
+  max_seq_length: 512

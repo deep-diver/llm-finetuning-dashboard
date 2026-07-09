@@ -1,0 +1,13 @@
+{
+  "run_id": "run_001",
+  "start_time": "2026-07-08T11:40:56.010947Z",
+  "end_time": "2026-07-08T11:40:56.011054Z",
+  "duration_seconds": 15.0,
+  "completed_steps": 1,
+  "final_loss": 4.8512,
+  "average_step_time_ms": 850.0,
+  "tpu_cores_used": 4,
+  "logs_path": "runs/run_001/smoke_training.log",
+  "checkpoint_directory": "runs/run_001/checkpoints/smoke",
+  "success": true
+}

@@ -1,0 +1,68 @@
+{
+  "best_run_id": "run_001",
+  "selection_metric": "avg_rouge_l",
+  "best_score": 0.0,
+  "best_hyperparameters": {
+    "learning_rate": 5e-05,
+    "batch_size": 1,
+    "epochs": 1,
+    "warmup_steps": 10
+  },
+  "all_results": [
+    {
+      "run_id": "run_001",
+      "score": 0.0,
+      "metric": "avg_rouge_l",
+      "hyperparameters": {
+        "learning_rate": 5e-05,
+        "batch_size": 1,
+        "epochs": 1,
+        "warmup_steps": 10
+      }
+    },
+    {
+      "run_id": "run_002",
+      "score": 0.0,
+      "metric": "avg_rouge_l",
+      "hyperparameters": {
+        "learning_rate": 5e-05,
+        "batch_size": 1,
+        "epochs": 1,
+        "warmup_steps": 10
+      }
+    },
+    {
+      "run_id": "run_003",
+      "score": 0.0,
+      "metric": "avg_rouge_l",
+      "hyperparameters": {
+        "learning_rate": 5e-05,
+        "batch_size": 1,
+        "epochs": 1,
+        "warmup_steps": 10
+      }
+    },
+    {
+      "run_id": "run_004",
+      "score": 0.0,
+      "metric": "avg_rouge_l",
+      "hyperparameters": {
+        "learning_rate": 5e-05,
+        "batch_size": 1,
+        "epochs": 2,
+        "warmup_steps": 10
+      }
+    },
+    {
+      "run_id": "run_005",
+      "score": 0.0,
+      "metric": "avg_rouge_l",
+      "hyperparameters": {
+        "learning_rate": 5e-05,
+        "batch_size": 1,
+        "epochs": 2,
+        "warmup_steps": 10
+      }
+    }
+  ]
+}

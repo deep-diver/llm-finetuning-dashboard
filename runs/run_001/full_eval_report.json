@@ -1,0 +1,16 @@
+{
+  "run_id": "run_001",
+  "test_split_size": 20,
+  "metrics": {
+    "test_loss": 1.3524,
+    "accuracy": 0.7,
+    "instruction_following_score": 0.3659517769413752,
+    "formatting_error_rate": 0.0
+  },
+  "comparison_with_baseline": {
+    "baseline_loss": 4.2152,
+    "improvement_pct": 67.9,
+    "regressions_detected": 3
+  },
+  "failure_count": 3
+}

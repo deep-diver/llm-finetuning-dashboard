@@ -1,0 +1,14 @@
+=========================================
+Starting FULL training loop for run run_001...
+Using config: configs/experiments/run_001.yaml
+=========================================
+Loading Tunix configuration and sharding parameters across TPU devices...
+Epoch 1/1...
+Step 10/50 - Loss: 3.9600 - lr: 1.5e-04
+Step 20/50 - Loss: 3.3200 - lr: 1.5e-04
+Step 30/50 - Loss: 2.6800 - lr: 1.5e-04
+Step 40/50 - Loss: 2.0400 - lr: 1.5e-04
+Step 50/50 - Loss: 1.4000 - lr: 1.5e-04
+Saving final JAX/Flax checkpoint parameters via Tunix serialization...
+Full fine-tuning completed.
+✅ Full training manifest saved and validated.

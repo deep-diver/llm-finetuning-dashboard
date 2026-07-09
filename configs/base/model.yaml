@@ -1,0 +1,16 @@
+# Base Model Configuration (JAX/Flax/Tunix)
+model:
+  base_model_id: "meta-llama/Llama-3.2-1B-Instruct"
+  framework: "tunix"
+  dtype: "bfloat16"
+  
+# PEFT / JAX-LoRA settings
+peft:
+  use_lora: true
+  r: 8
+  lora_alpha: 16
+  target_modules:
+    - "q_proj"
+    - "v_proj"
+  lora_dropout: 0.05
+  task_type: "CAUSAL_LM"

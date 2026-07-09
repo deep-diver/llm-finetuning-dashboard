@@ -1,0 +1,8 @@
+{
+  "run_id": "run_001",
+  "synthetic_file_path": "data/synthetic/run_001_synthetic.jsonl",
+  "records_generated": 2,
+  "target_failures": [
+    "format_violation"
+  ]
+}

@@ -1,0 +1,14 @@
+# Base TPU Configuration
+tpu:
+  accelerator_type: "v5litepod-8"  # 8 TPU chips (v5e-8)
+  zone: "us-west4-a"        # Provisioned JAX v5e zone
+  project_id: "gcp-ml-172005"
+  tpu_vm_name: "finetuning-tpu-vm"
+  runtime_version: "v2-alpha-tpuv5-lite"
+  
+  # Model settings
+  base_model_id: "meta-llama/Llama-3.2-1B-Instruct"
+  
+  # Orchestration settings
+  docker_image: "gcr.io/example-gcp-project/tunix-tpu-finetuning:latest"
+  remote_code_dir: "/workspace/llm-finetuning"

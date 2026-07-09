@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NextExperiment",
+  "type": "object",
+  "properties": {
+    "parent_run_id": { "type": "string" },
+    "proposed_run_id": { "type": "string" },
+    "rationale": { "type": "string" },
+    "adjustments": {
+      "type": "object",
+      "properties": {
+        "learning_rate": { "type": "number" },
+        "batch_size": { "type": "integer" },
+        "lora_rank": { "type": "integer" },
+        "data_mix": {
+          "type": "object",
+          "properties": {
+            "use_synthetic_data": { "type": "boolean" },
+            "synthetic_data_ratio": { "type": "number" }
+          },
+          "required": ["use_synthetic_data"]
+        }
+      },
+      "required": ["learning_rate", "batch_size"]
+    },
+    "focus_areas": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "required": ["parent_run_id", "proposed_run_id", "rationale", "adjustments", "focus_areas"]
+}

@@ -1,0 +1,18 @@
+# Base Training Configuration
+hyperparameters:
+  learning_rate: 0.0002
+  batch_size: 4
+  epochs: 1
+  warmup_steps: 10
+  weight_decay: 0.01
+  optimizer: "optax.adamw"
+  lr_scheduler_type: "cosine"
+  gradient_accumulation_steps: 2
+  logging_steps: 5
+  eval_steps: 25
+  save_steps: 50
+
+# Safety thresholds
+safety:
+  max_grad_norm: 1.0
+  loss_explosion_threshold: 15.0

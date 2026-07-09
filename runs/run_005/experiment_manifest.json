@@ -1,0 +1,10 @@
+{
+  "run_id": "run_005",
+  "timestamp": "2026-07-08T13:37:38.864064Z",
+  "status": "configured",
+  "config_path": "configs/experiments/run_005.yaml",
+  "base_model": "meta-llama/Llama-3.2-1B-Instruct",
+  "dataset_report_path": "runs/run_005/dataset_report.json",
+  "steps_completed": 0,
+  "active_stage": "training-configuration"
+}

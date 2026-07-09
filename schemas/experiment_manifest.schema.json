@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ExperimentManifest",
+  "type": "object",
+  "properties": {
+    "run_id": { "type": "string" },
+    "timestamp": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["created", "dataset_prepared", "configured", "smoke_passed", "local_evaluated", "training_started", "completed", "failed"]
+    },
+    "config_path": { "type": "string" },
+    "base_model": { "type": "string" },
+    "dataset_report_path": { "type": "string" },
+    "steps_completed": { "type": "integer" },
+    "active_stage": { "type": "string" }
+  },
+  "required": ["run_id", "timestamp", "status", "config_path", "base_model", "active_stage"]
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TrainingConfig",
+  "type": "object",
+  "properties": {
+    "run_id": { "type": "string" },
+    "model": {
+      "type": "object",
+      "properties": {
+        "base_model_id": { "type": "string" },
+        "lora_rank": { "type": "integer" },
+        "lora_alpha": { "type": "integer" },
+        "lora_dropout": { "type": "number" }
+      },
+      "required": ["base_model_id"]
+    },
+    "dataset": {
+      "type": "object",
+      "properties": {
+        "train_path": { "type": "string" },
+        "valid_path": { "type": "string" },
+        "max_seq_length": { "type": "integer" }
+      },
+      "required": ["train_path", "valid_path"]
+    },
+    "hyperparameters": {
+      "type": "object",
+      "properties": {
+        "learning_rate": { "type": "number" },
+        "batch_size": { "type": "integer" },
+        "epochs": { "type": "integer" },
+        "warmup_steps": { "type": "integer" },
+        "weight_decay": { "type": "number" },
+        "optimizer": { "type": "string" }
+      },
+      "required": ["learning_rate", "batch_size", "epochs"]
+    },
+    "tpu": {
+      "type": "object",
+      "properties": {
+        "accelerator_type": { "type": "string" },
+        "num_cores": { "type": "integer" },
+        "zone": { "type": "string" }
+      },
+      "required": ["accelerator_type"]
+    }
+  },
+  "required": ["run_id", "model", "dataset", "hyperparameters"]
+}

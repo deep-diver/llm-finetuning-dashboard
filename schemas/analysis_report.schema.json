@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AnalysisReport",
+  "type": "object",
+  "properties": {
+    "run_id": { "type": "string" },
+    "analysis_timestamp": { "type": "string" },
+    "research_questions": {
+      "type": "object",
+      "properties": {
+        "local_eval_predicted_full_run": { "type": "boolean" },
+        "hyperparameter_efficacy": { "type": "string" },
+        "primary_failure_modes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["local_eval_predicted_full_run", "hyperparameter_efficacy", "primary_failure_modes"]
+    },
+    "key_learnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "recommend_further_training": { "type": "boolean" },
+    "recommend_data_synthesis": { "type": "boolean" }
+  },
+  "required": ["run_id", "analysis_timestamp", "research_questions", "key_learnings", "recommend_further_training", "recommend_data_synthesis"]
+}

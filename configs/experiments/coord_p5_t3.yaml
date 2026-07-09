@@ -1,0 +1,55 @@
+dataset:
+  format_template: instruction_response
+  max_seq_length: 512
+  name: dolly-15k-sample
+  processed_dir: data/processed/
+  raw_dir: data/raw/
+  sample_size: 500
+  seed: 42
+  source_huggingface: databricks/databricks-dolly-15k
+  splits:
+    test_ratio: 0.1
+    train_ratio: 0.8
+    valid_ratio: 0.1
+  synthetic_dir: data/synthetic/
+  train_path: data/processed/train.jsonl
+  valid_path: data/processed/valid.jsonl
+hyperparameters:
+  adam_beta1: 0.9
+  batch_size: 1
+  epochs: 1
+  eval_steps: 25
+  gradient_accumulation_steps: 1
+  learning_rate: 0.001
+  logging_steps: 5
+  lr_scheduler_type: cosine
+  optimizer: optax.adamw
+  save_steps: 50
+  warmup_steps: 0
+  weight_decay: 0.0
+model:
+  base_model_id: meta-llama/Llama-3.2-1B-Instruct
+  dtype: bfloat16
+  framework: tunix
+peft:
+  lora_alpha: 16
+  lora_dropout: 0.05
+  r: 8
+  target_modules:
+  - q_proj
+  - v_proj
+  task_type: CAUSAL_LM
+  use_lora: true
+run_id: coord_p5_t3
+safety:
+  loss_explosion_threshold: 15.0
+  max_grad_norm: 1.0
+tpu:
+  accelerator_type: v5litepod-8
+  base_model_id: meta-llama/Llama-3.2-1B-Instruct
+  docker_image: gcr.io/example-gcp-project/tunix-tpu-finetuning:latest
+  project_id: gcp-ml-172005
+  remote_code_dir: /workspace/llm-finetuning
+  runtime_version: v2-alpha-tpuv5-lite
+  tpu_vm_name: finetuning-tpu-vm
+  zone: us-west4-a

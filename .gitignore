@@ -1,0 +1,24 @@
+# Exclude massive weight binary checkpoints
+*.msgpack
+*.bin
+*.pt
+*.h5
+
+# Exclude temp cache files
+__pycache__/
+*.pyc
+.DS_Store
+.ipython/
+.pytest_cache/
+
+# Exclude temporary runs but keep configs and main results
+runs/coord_*/
+runs/run_full/checkpoints/
+runs/run_full/flax_model.msgpack
+runs/auto_research_logs/
+
+# Keep only metadata and plots in runs
+!runs/run_full/experiment_manifest.json
+!runs/run_full/training_config_summary.md
+!runs/run_full/full_training_loss.png
+!runs/coordinate_search_state.json

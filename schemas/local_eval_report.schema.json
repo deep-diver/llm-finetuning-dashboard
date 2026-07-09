@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LocalEvalReport",
+  "type": "object",
+  "properties": {
+    "run_id": { "type": "string" },
+    "evaluation_steps": { "type": "integer" },
+    "loss_slope": { "type": "number" },
+    "estimated_val_loss": { "type": "number" },
+    "format_compliance_rate": { "type": "number" },
+    "sample_generations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "instruction": { "type": "string" },
+          "expected_response": { "type": "string" },
+          "model_generation": { "type": "string" },
+          "is_correct_format": { "type": "boolean" }
+        },
+        "required": ["instruction", "expected_response", "model_generation"]
+      }
+    },
+    "suggest_full_run": { "type": "boolean" },
+    "candidate_adjustments": {
+      "type": "object",
+      "properties": {
+        "learning_rate": { "type": "number" },
+        "batch_size": { "type": "integer" },
+        "lora_rank": { "type": "integer" }
+      }
+    }
+  },
+  "required": ["run_id", "evaluation_steps", "loss_slope", "estimated_val_loss", "format_compliance_rate", "sample_generations", "suggest_full_run"]
+}

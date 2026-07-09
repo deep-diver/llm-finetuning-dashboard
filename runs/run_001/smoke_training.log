@@ -1,0 +1,302 @@
+=========================================
+Extracting GCP settings from configuration: configs/experiments/run_001.yaml
+=========================================
+Target TPU: finetuning-tpu-vm in Zone: us-west4-a (Project: gcp-ml-172005)
+Synchronizing project workspace to TPU VM...
+Propagating SSH public key to all TPU workers...
+.......................................................................done.
+Using scp batch size of 1.Attempting to SCP into 1 nodes with a total of 1 workers.
+SCP: Attempting to connect to worker 0...
+Warning: Permanently added 'tpu.8810308813927401600-0-skqihp' (ED25519) to the list of known hosts.
+Bootstrapping JAX dependencies on TPU VM...
+Using ssh batch size of 1. Attempting to SSH into 1 nodes with a total of 1 workers.
+SSH: Attempting to connect to worker 0...
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pip in /usr/lib/python3/dist-packages (22.0.2)
+Collecting pip
+  Downloading pip-26.1.2-py3-none-any.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 11.8 MB/s eta 0:00:00
+Installing collected packages: pip
+  WARNING: The scripts pip, pip3 and pip3.10 are installed in '/home/deep-diver/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed pip-26.1.2
+Defaulting to user installation because normal site-packages is not writeable
+Looking in indexes: https://download.pytorch.org/whl/cpu
+Collecting torch
+  Downloading torch-2.12.1%2Bcpu-cp310-cp310-manylinux_2_28_x86_64.whl.metadata (31 kB)
+Requirement already satisfied: filelock in /usr/local/lib/python3.10/dist-packages (from torch) (3.15.4)
+Collecting typing-extensions>=4.10.0 (from torch)
+  Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Requirement already satisfied: setuptools<82 in /usr/local/lib/python3.10/dist-packages (from torch) (71.0.0)
+Collecting sympy>=1.13.3 (from torch)
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx>=2.5.1 (from torch)
+  Downloading networkx-3.4.2-py3-none-any.whl.metadata (6.3 kB)
+Requirement already satisfied: jinja2 in /usr/lib/python3/dist-packages (from torch) (3.0.3)
+Collecting fsspec>=0.8.5 (from torch)
+  Downloading fsspec-2026.4.0-py3-none-any.whl.metadata (10 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch)
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Downloading torch-2.12.1%2Bcpu-cp310-cp310-manylinux_2_28_x86_64.whl (192.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 192.2/192.2 MB 80.8 MB/s  0:00:02
+Downloading fsspec-2026.4.0-py3-none-any.whl (203 kB)
+Downloading networkx-3.4.2-py3-none-any.whl (1.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 59.4 MB/s  0:00:00
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 136.5 MB/s  0:00:00
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 31.8 MB/s  0:00:00
+Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Installing collected packages: mpmath, typing-extensions, sympy, networkx, fsspec, torch
+  WARNING: The script isympy is installed in '/home/deep-diver/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts torchfrtrace and torchrun are installed in '/home/deep-diver/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+
+Successfully installed fsspec-2026.4.0 mpmath-1.3.0 networkx-3.4.2 sympy-1.14.0 torch-2.12.1+cpu typing-extensions-4.15.0
+Defaulting to user installation because normal site-packages is not writeable
+Looking in links: https://storage.googleapis.com/jax-releases/libtpu_releases.html
+Collecting jax[tpu]
+  Downloading jax-0.6.2-py3-none-any.whl.metadata (13 kB)
+Collecting jaxlib<=0.6.2,>=0.6.2 (from jax[tpu])
+  Downloading jaxlib-0.6.2-cp310-cp310-manylinux2014_x86_64.whl.metadata (1.3 kB)
+Collecting ml_dtypes>=0.5.0 (from jax[tpu])
+  Downloading ml_dtypes-0.5.4-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.9 kB)
+Collecting numpy>=1.26 (from jax[tpu])
+  Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+Collecting opt_einsum (from jax[tpu])
+  Downloading opt_einsum-3.4.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting scipy>=1.12 (from jax[tpu])
+  Downloading scipy-1.15.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
+Collecting libtpu==0.0.17.* (from jax[tpu])
+  Downloading libtpu-0.0.17-py3-none-manylinux_2_31_x86_64.whl.metadata (500 bytes)
+Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from jax[tpu]) (2.32.3)
+Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests->jax[tpu]) (3.3.2)
+Requirement already satisfied: idna<4,>=2.5 in /usr/lib/python3/dist-packages (from requests->jax[tpu]) (3.3)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/lib/python3/dist-packages (from requests->jax[tpu]) (1.26.5)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/lib/python3/dist-packages (from requests->jax[tpu]) (2020.6.20)
+Downloading jax-0.6.2-py3-none-any.whl (2.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 70.0 MB/s  0:00:00
+Downloading jaxlib-0.6.2-cp310-cp310-manylinux2014_x86_64.whl (89.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.9/89.9 MB 78.7 MB/s  0:00:01
+Downloading libtpu-0.0.17-py3-none-manylinux_2_31_x86_64.whl (135.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.2/135.2 MB 70.1 MB/s  0:00:01
+Downloading ml_dtypes-0.5.4-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (5.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.0/5.0 MB 107.5 MB/s  0:00:00
+Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.8/16.8 MB 133.5 MB/s  0:00:00
+Downloading scipy-1.15.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.7/37.7 MB 98.2 MB/s  0:00:00
+Downloading opt_einsum-3.4.0-py3-none-any.whl (71 kB)
+Installing collected packages: libtpu, opt_einsum, numpy, scipy, ml_dtypes, jaxlib, jax
+  WARNING: The scripts f2py and numpy-config are installed in '/home/deep-diver/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+
+Successfully installed jax-0.6.2 jaxlib-0.6.2 libtpu-0.0.17 ml_dtypes-0.5.4 numpy-2.2.6 opt_einsum-3.4.0 scipy-1.15.3
+Defaulting to user installation because normal site-packages is not writeable
+Collecting optax
+  Downloading optax-0.2.8-py3-none-any.whl.metadata (7.9 kB)
+Collecting flax
+  Downloading flax-0.10.7-py3-none-any.whl.metadata (11 kB)
+Collecting transformers==4.45.0
+  Downloading transformers-4.45.0-py3-none-any.whl.metadata (44 kB)
+Requirement already satisfied: pyyaml in /usr/lib/python3/dist-packages (5.4.1)
+Requirement already satisfied: jsonschema in /usr/lib/python3/dist-packages (3.2.0)
+Requirement already satisfied: filelock in /usr/local/lib/python3.10/dist-packages (from transformers==4.45.0) (3.15.4)
+Collecting huggingface-hub<1.0,>=0.23.2 (from transformers==4.45.0)
+  Downloading huggingface_hub-0.36.2-py3-none-any.whl.metadata (15 kB)
+Requirement already satisfied: numpy>=1.17 in ./.local/lib/python3.10/site-packages (from transformers==4.45.0) (2.2.6)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.10/dist-packages (from transformers==4.45.0) (24.1)
+Collecting regex!=2019.12.17 (from transformers==4.45.0)
+  Downloading regex-2026.6.28-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from transformers==4.45.0) (2.32.3)
+Collecting tokenizers<0.21,>=0.20 (from transformers==4.45.0)
+  Downloading tokenizers-0.20.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Collecting safetensors>=0.4.1 (from transformers==4.45.0)
+  Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+Collecting tqdm>=4.27 (from transformers==4.45.0)
+  Downloading tqdm-4.68.4-py3-none-any.whl.metadata (57 kB)
+Requirement already satisfied: fsspec>=2023.5.0 in ./.local/lib/python3.10/site-packages (from huggingface-hub<1.0,>=0.23.2->transformers==4.45.0) (2026.4.0)
+Collecting hf-xet<2.0.0,>=1.1.3 (from huggingface-hub<1.0,>=0.23.2->transformers==4.45.0)
+  Downloading hf_xet-1.5.1-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in ./.local/lib/python3.10/site-packages (from huggingface-hub<1.0,>=0.23.2->transformers==4.45.0) (4.15.0)
+Collecting absl-py>=0.7.1 (from optax)
+  Downloading absl_py-2.5.0-py3-none-any.whl.metadata (3.3 kB)
+Requirement already satisfied: jax>=0.5.3 in ./.local/lib/python3.10/site-packages (from optax) (0.6.2)
+Requirement already satisfied: jaxlib>=0.5.3 in ./.local/lib/python3.10/site-packages (from optax) (0.6.2)
+Collecting msgpack (from flax)
+  Downloading msgpack-1.2.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+Collecting orbax-checkpoint (from flax)
+  Downloading orbax_checkpoint-0.11.39-py3-none-any.whl.metadata (2.8 kB)
+Collecting tensorstore (from flax)
+  Downloading tensorstore-0.1.78-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (21 kB)
+Collecting rich>=11.1 (from flax)
+  Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Collecting treescope>=0.1.7 (from flax)
+  Downloading treescope-0.1.10-py3-none-any.whl.metadata (6.6 kB)
+Requirement already satisfied: ml_dtypes>=0.5.0 in ./.local/lib/python3.10/site-packages (from jax>=0.5.3->optax) (0.5.4)
+Requirement already satisfied: opt_einsum in ./.local/lib/python3.10/site-packages (from jax>=0.5.3->optax) (3.4.0)
+Requirement already satisfied: scipy>=1.12 in ./.local/lib/python3.10/site-packages (from jax>=0.5.3->optax) (1.15.3)
+Collecting markdown-it-py>=2.2.0 (from rich>=11.1->flax)
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=11.1->flax)
+  Downloading pygments-2.20.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=11.1->flax)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Collecting etils[epath,epy] (from orbax-checkpoint->flax)
+  Downloading etils-1.13.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting aiofiles (from orbax-checkpoint->flax)
+  Downloading aiofiles-25.1.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting protobuf (from orbax-checkpoint->flax)
+  Downloading protobuf-7.35.1-cp310-abi3-manylinux2014_x86_64.whl.metadata (595 bytes)
+Collecting humanize (from orbax-checkpoint->flax)
+  Downloading humanize-4.16.0-py3-none-any.whl.metadata (8.0 kB)
+Collecting simplejson>=3.16.0 (from orbax-checkpoint->flax)
+  Downloading simplejson-4.1.1-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (3.8 kB)
+Collecting psutil (from orbax-checkpoint->flax)
+  Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+Collecting uvloop (from orbax-checkpoint->flax)
+  Downloading uvloop-0.22.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.9 kB)
+Collecting importlib_resources (from etils[epath,epy]->orbax-checkpoint->flax)
+  Downloading importlib_resources-7.1.0-py3-none-any.whl.metadata (4.0 kB)
+Requirement already satisfied: zipp in /usr/lib/python3/dist-packages (from etils[epath,epy]->orbax-checkpoint->flax) (1.0.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests->transformers==4.45.0) (3.3.2)
+Requirement already satisfied: idna<4,>=2.5 in /usr/lib/python3/dist-packages (from requests->transformers==4.45.0) (3.3)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/lib/python3/dist-packages (from requests->transformers==4.45.0) (1.26.5)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/lib/python3/dist-packages (from requests->transformers==4.45.0) (2020.6.20)
+Downloading transformers-4.45.0-py3-none-any.whl (9.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 120.5 MB/s  0:00:00
+Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 33.6 MB/s  0:00:00
+Downloading hf_xet-1.5.1-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 107.6 MB/s  0:00:00
+Downloading tokenizers-0.20.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 95.6 MB/s  0:00:00
+Downloading optax-0.2.8-py3-none-any.whl (402 kB)
+Downloading flax-0.10.7-py3-none-any.whl (456 kB)
+Downloading absl_py-2.5.0-py3-none-any.whl (137 kB)
+Downloading regex-2026.6.28-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (794 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 794.1/794.1 kB 50.8 MB/s  0:00:00
+Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+Downloading pygments-2.20.0-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 74.1 MB/s  0:00:00
+Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+Downloading tqdm-4.68.4-py3-none-any.whl (676 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 676.6/676.6 kB 46.1 MB/s  0:00:00
+Downloading treescope-0.1.10-py3-none-any.whl (182 kB)
+Downloading msgpack-1.2.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (407 kB)
+Downloading orbax_checkpoint-0.11.39-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 68.8 MB/s  0:00:00
+Downloading simplejson-4.1.1-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (168 kB)
+Downloading tensorstore-0.1.78-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (20.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 20.0/20.0 MB 163.0 MB/s  0:00:00
+Downloading aiofiles-25.1.0-py3-none-any.whl (14 kB)
+Downloading etils-1.13.0-py3-none-any.whl (170 kB)
+Downloading humanize-4.16.0-py3-none-any.whl (137 kB)
+Downloading importlib_resources-7.1.0-py3-none-any.whl (37 kB)
+Downloading protobuf-7.35.1-cp310-abi3-manylinux2014_x86_64.whl (327 kB)
+Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+Downloading uvloop-0.22.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 118.0 MB/s  0:00:00
+Installing collected packages: uvloop, treescope, tqdm, simplejson, safetensors, regex, pygments, psutil, protobuf, msgpack, mdurl, importlib_resources, humanize, hf-xet, etils, aiofiles, absl-py, tensorstore, markdown-it-py, huggingface-hub, tokenizers, rich, transformers, orbax-checkpoint, optax, flax
+  WARNING: The script tqdm is installed in '/home/deep-diver/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script pygmentize is installed in '/home/deep-diver/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script markdown-it is installed in '/home/deep-diver/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts hf, huggingface-cli and tiny-agents are installed in '/home/deep-diver/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script transformers-cli is installed in '/home/deep-diver/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+
+Successfully installed absl-py-2.5.0 aiofiles-25.1.0 etils-1.13.0 flax-0.10.7 hf-xet-1.5.1 huggingface-hub-0.36.2 humanize-4.16.0 importlib_resources-7.1.0 markdown-it-py-4.2.0 mdurl-0.1.2 msgpack-1.2.1 optax-0.2.8 orbax-checkpoint-0.11.39 protobuf-7.35.1 psutil-7.2.2 pygments-2.20.0 regex-2026.6.28 rich-15.0.0 safetensors-0.8.0 simplejson-4.1.1 tensorstore-0.1.78 tokenizers-0.20.3 tqdm-4.68.4 transformers-4.45.0 treescope-0.1.10 uvloop-0.22.1
+Executing JAX Causal LM fine-tuning on TPU VM...
+Using ssh batch size of 1. Attempting to SSH into 1 nodes with a total of 1 workers.
+SSH: Attempting to connect to worker 0...
+Using ssh batch size of 1. Attempting to SSH into 1 nodes with a total of 1 workers.
+SSH: Attempting to connect to worker 0...
+Some weights of FlaxLlamaForCausalLM were not initialized from the model checkpoint at meta-llama/Llama-3.2-1B-Instruct and are newly initialized: {('lm_head', 'kernel')}
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some of the weights of FlaxLlamaForCausalLM were initialized in bfloat16 precision from the model checkpoint at meta-llama/Llama-3.2-1B-Instruct:
+[('model', 'embed_tokens', 'embedding'), ('model', 'layers', '0', 'input_layernorm', 'weight'), ('model', 'layers', '0', 'mlp', 'down_proj', 'kernel'), ('model', 'layers', '0', 'mlp', 'gate_proj', 'kernel'), ('model', 'layers', '0', 'mlp', 'up_proj', 'kernel'), ('model', 'layers', '0', 'post_attention_layernorm', 'weight'), ('model', 'layers', '0', 'self_attn', 'k_proj', 'kernel'), ('model', 'layers', '0', 'self_attn', 'o_proj', 'kernel'), ('model', 'layers', '0', 'self_attn', 'q_proj', 'kernel'), ('model', 'layers', '0', 'self_attn', 'v_proj', 'kernel'), ('model', 'layers', '1', 'input_layernorm', 'weight'), ('model', 'layers', '1', 'mlp', 'down_proj', 'kernel'), ('model', 'layers', '1', 'mlp', 'gate_proj', 'kernel'), ('model', 'layers', '1', 'mlp', 'up_proj', 'kernel'), ('model', 'layers', '1', 'post_attention_layernorm', 'weight'), ('model', 'layers', '1', 'self_attn', 'k_proj', 'kernel'), ('model', 'layers', '1', 'self_attn', 'o_proj', 'kernel'), ('model', 'layers', '1', 'self_attn', 'q_proj', 'kernel'), ('model', 'layers', '1', 'self_attn', 'v_proj', 'kernel'), ('model', 'layers', '10', 'input_layernorm', 'weight'), ('model', 'layers', '10', 'mlp', 'down_proj', 'kernel'), ('model', 'layers', '10', 'mlp', 'gate_proj', 'kernel'), ('model', 'layers', '10', 'mlp', 'up_proj', 'kernel'), ('model', 'layers', '10', 'post_attention_layernorm', 'weight'), ('model', 'layers', '10', 'self_attn', 'k_proj', 'kernel'), ('model', 'layers', '10', 'self_attn', 'o_proj', 'kernel'), ('model', 'layers', '10', 'self_attn', 'q_proj', 'kernel'), ('model', 'layers', '10', 'self_attn', 'v_proj', 'kernel'), ('model', 'layers', '11', 'input_layernorm', 'weight'), ('model', 'layers', '11', 'mlp', 'down_proj', 'kernel'), ('model', 'layers', '11', 'mlp', 'gate_proj', 'kernel'), ('model', 'layers', '11', 'mlp', 'up_proj', 'kernel'), ('model', 'layers', '11', 'post_attention_layernorm', 'weight'), ('model', 'layers', '11', 'self_attn', 'k_proj', 'kernel'), ('model', 'layers', '11', 'self_attn', 'o_proj', 'kernel'), ('model', 'layers', '11', 'self_attn', 'q_proj', 'kernel'), ('model', 'layers', '11', 'self_attn', 'v_proj', 'kernel'), ('model', 'layers', '12', 'input_layernorm', 'weight'), ('model', 'layers', '12', 'mlp', 'down_proj', 'kernel'), ('model', 'layers', '12', 'mlp', 'gate_proj', 'kernel'), ('model', 'layers', '12', 'mlp', 'up_proj', 'kernel'), ('model', 'layers', '12', 'post_attention_layernorm', 'weight'), ('model', 'layers', '12', 'self_attn', 'k_proj', 'kernel'), ('model', 'layers', '12', 'self_attn', 'o_proj', 'kernel'), ('model', 'layers', '12', 'self_attn', 'q_proj', 'kernel'), ('model', 'layers', '12', 'self_attn', 'v_proj', 'kernel'), ('model', 'layers', '13', 'input_layernorm', 'weight'), ('model', 'layers', '13', 'mlp', 'down_proj', 'kernel'), ('model', 'layers', '13', 'mlp', 'gate_proj', 'kernel'), ('model', 'layers', '13', 'mlp', 'up_proj', 'kernel'), ('model', 'layers', '13', 'post_attention_layernorm', 'weight'), ('model', 'layers', '13', 'self_attn', 'k_proj', 'kernel'), ('model', 'layers', '13', 'self_attn', 'o_proj', 'kernel'), ('model', 'layers', '13', 'self_attn', 'q_proj', 'kernel'), ('model', 'layers', '13', 'self_attn', 'v_proj', 'kernel'), ('model', 'layers', '14', 'input_layernorm', 'weight'), ('model', 'layers', '14', 'mlp', 'down_proj', 'kernel'), ('model', 'layers', '14', 'mlp', 'gate_proj', 'kernel'), ('model', 'layers', '14', 'mlp', 'up_proj', 'kernel'), ('model', 'layers', '14', 'post_attention_layernorm', 'weight'), ('model', 'layers', '14', 'self_attn', 'k_proj', 'kernel'), ('model', 'layers', '14', 'self_attn', 'o_proj', 'kernel'), ('model', 'layers', '14', 'self_attn', 'q_proj', 'kernel'), ('model', 'layers', '14', 'self_attn', 'v_proj', 'kernel'), ('model', 'layers', '15', 'input_layernorm', 'weight'), ('model', 'layers', '15', 'mlp', 'down_proj', 'kernel'), ('model', 'layers', '15', 'mlp', 'gate_proj', 'kernel'), ('model', 'layers', '15', 'mlp', 'up_proj', 'kernel'), ('model', 'layers', '15', 'post_attention_layernorm', 'weight'), ('model', 'layers', '15', 'self_attn', 'k_proj', 'kernel'), ('model', 'layers', '15', 'self_attn', 'o_proj', 'kernel'), ('model', 'layers', '15', 'self_attn', 'q_proj', 'kernel'), ('model', 'layers', '15', 'self_attn', 'v_proj', 'kernel'), ('model', 'layers', '2', 'input_layernorm', 'weight'), ('model', 'layers', '2', 'mlp', 'down_proj', 'kernel'), ('model', 'layers', '2', 'mlp', 'gate_proj', 'kernel'), ('model', 'layers', '2', 'mlp', 'up_proj', 'kernel'), ('model', 'layers', '2', 'post_attention_layernorm', 'weight'), ('model', 'layers', '2', 'self_attn', 'k_proj', 'kernel'), ('model', 'layers', '2', 'self_attn', 'o_proj', 'kernel'), ('model', 'layers', '2', 'self_attn', 'q_proj', 'kernel'), ('model', 'layers', '2', 'self_attn', 'v_proj', 'kernel'), ('model', 'layers', '3', 'input_layernorm', 'weight'), ('model', 'layers', '3', 'mlp', 'down_proj', 'kernel'), ('model', 'layers', '3', 'mlp', 'gate_proj', 'kernel'), ('model', 'layers', '3', 'mlp', 'up_proj', 'kernel'), ('model', 'layers', '3', 'post_attention_layernorm', 'weight'), ('model', 'layers', '3', 'self_attn', 'k_proj', 'kernel'), ('model', 'layers', '3', 'self_attn', 'o_proj', 'kernel'), ('model', 'layers', '3', 'self_attn', 'q_proj', 'kernel'), ('model', 'layers', '3', 'self_attn', 'v_proj', 'kernel'), ('model', 'layers', '4', 'input_layernorm', 'weight'), ('model', 'layers', '4', 'mlp', 'down_proj', 'kernel'), ('model', 'layers', '4', 'mlp', 'gate_proj', 'kernel'), ('model', 'layers', '4', 'mlp', 'up_proj', 'kernel'), ('model', 'layers', '4', 'post_attention_layernorm', 'weight'), ('model', 'layers', '4', 'self_attn', 'k_proj', 'kernel'), ('model', 'layers', '4', 'self_attn', 'o_proj', 'kernel'), ('model', 'layers', '4', 'self_attn', 'q_proj', 'kernel'), ('model', 'layers', '4', 'self_attn', 'v_proj', 'kernel'), ('model', 'layers', '5', 'input_layernorm', 'weight'), ('model', 'layers', '5', 'mlp', 'down_proj', 'kernel'), ('model', 'layers', '5', 'mlp', 'gate_proj', 'kernel'), ('model', 'layers', '5', 'mlp', 'up_proj', 'kernel'), ('model', 'layers', '5', 'post_attention_layernorm', 'weight'), ('model', 'layers', '5', 'self_attn', 'k_proj', 'kernel'), ('model', 'layers', '5', 'self_attn', 'o_proj', 'kernel'), ('model', 'layers', '5', 'self_attn', 'q_proj', 'kernel'), ('model', 'layers', '5', 'self_attn', 'v_proj', 'kernel'), ('model', 'layers', '6', 'input_layernorm', 'weight'), ('model', 'layers', '6', 'mlp', 'down_proj', 'kernel'), ('model', 'layers', '6', 'mlp', 'gate_proj', 'kernel'), ('model', 'layers', '6', 'mlp', 'up_proj', 'kernel'), ('model', 'layers', '6', 'post_attention_layernorm', 'weight'), ('model', 'layers', '6', 'self_attn', 'k_proj', 'kernel'), ('model', 'layers', '6', 'self_attn', 'o_proj', 'kernel'), ('model', 'layers', '6', 'self_attn', 'q_proj', 'kernel'), ('model', 'layers', '6', 'self_attn', 'v_proj', 'kernel'), ('model', 'layers', '7', 'input_layernorm', 'weight'), ('model', 'layers', '7', 'mlp', 'down_proj', 'kernel'), ('model', 'layers', '7', 'mlp', 'gate_proj', 'kernel'), ('model', 'layers', '7', 'mlp', 'up_proj', 'kernel'), ('model', 'layers', '7', 'post_attention_layernorm', 'weight'), ('model', 'layers', '7', 'self_attn', 'k_proj', 'kernel'), ('model', 'layers', '7', 'self_attn', 'o_proj', 'kernel'), ('model', 'layers', '7', 'self_attn', 'q_proj', 'kernel'), ('model', 'layers', '7', 'self_attn', 'v_proj', 'kernel'), ('model', 'layers', '8', 'input_layernorm', 'weight'), ('model', 'layers', '8', 'mlp', 'down_proj', 'kernel'), ('model', 'layers', '8', 'mlp', 'gate_proj', 'kernel'), ('model', 'layers', '8', 'mlp', 'up_proj', 'kernel'), ('model', 'layers', '8', 'post_attention_layernorm', 'weight'), ('model', 'layers', '8', 'self_attn', 'k_proj', 'kernel'), ('model', 'layers', '8', 'self_attn', 'o_proj', 'kernel'), ('model', 'layers', '8', 'self_attn', 'q_proj', 'kernel'), ('model', 'layers', '8', 'self_attn', 'v_proj', 'kernel'), ('model', 'layers', '9', 'input_layernorm', 'weight'), ('model', 'layers', '9', 'mlp', 'down_proj', 'kernel'), ('model', 'layers', '9', 'mlp', 'gate_proj', 'kernel'), ('model', 'layers', '9', 'mlp', 'up_proj', 'kernel'), ('model', 'layers', '9', 'post_attention_layernorm', 'weight'), ('model', 'layers', '9', 'self_attn', 'k_proj', 'kernel'), ('model', 'layers', '9', 'self_attn', 'o_proj', 'kernel'), ('model', 'layers', '9', 'self_attn', 'q_proj', 'kernel'), ('model', 'layers', '9', 'self_attn', 'v_proj', 'kernel'), ('model', 'norm', 'weight')]
+You should probably UPCAST the model weights to float32 if this was not intended. See [`~FlaxPreTrainedModel.to_fp32`] for further information on how to do this.
+JAX Devices detected: [TpuDevice(id=0, process_index=0, coords=(0,0,0), core_on_chip=0), TpuDevice(id=1, process_index=0, coords=(1,0,0), core_on_chip=0), TpuDevice(id=2, process_index=0, coords=(0,1,0), core_on_chip=0), TpuDevice(id=3, process_index=0, coords=(1,1,0), core_on_chip=0), TpuDevice(id=4, process_index=0, coords=(0,2,0), core_on_chip=0), TpuDevice(id=5, process_index=0, coords=(1,2,0), core_on_chip=0), TpuDevice(id=6, process_index=0, coords=(0,3,0), core_on_chip=0), TpuDevice(id=7, process_index=0, coords=(1,3,0), core_on_chip=0)]
+TPU Cores: 8
+Loading tokenizer: meta-llama/Llama-3.2-1B-Instruct
+Loading Flax Model Configuration: meta-llama/Llama-3.2-1B-Instruct
+Loading Flax Model: meta-llama/Llama-3.2-1B-Instruct
+Loading dataset: data/processed/train.jsonl
+Total training samples: 60
+Initializing JAX Optax Optimizer (Adafactor, lr=0.0002)
+Beginning JIT compilation and training loop...
+--- Epoch 1 ---
+Step 1 - Loss: 13.7500 - time/step: 39933.83ms
+Step 2 - Loss: 13.8750 - time/step: 53.17ms
+Step 3 - Loss: 13.1875 - time/step: 53.26ms
+Step 4 - Loss: 13.8750 - time/step: 53.25ms
+Step 5 - Loss: 13.6250 - time/step: 53.51ms
+Step 6 - Loss: 12.6250 - time/step: 54.61ms
+Step 7 - Loss: 11.1250 - time/step: 54.29ms
+Step 8 - Loss: 13.2500 - time/step: 55.10ms
+Step 9 - Loss: 11.5000 - time/step: 54.76ms
+Step 10 - Loss: 10.0000 - time/step: 55.09ms
+Step 11 - Loss: 13.1250 - time/step: 55.02ms
+Step 12 - Loss: 13.4375 - time/step: 55.18ms
+Step 13 - Loss: 13.2500 - time/step: 54.97ms
+Step 14 - Loss: 12.7500 - time/step: 55.16ms
+Step 15 - Loss: 12.3750 - time/step: 55.05ms
+Step 16 - Loss: 9.9375 - time/step: 55.10ms
+Step 17 - Loss: 13.1875 - time/step: 54.93ms
+Step 18 - Loss: 9.8125 - time/step: 55.21ms
+Step 19 - Loss: 13.1250 - time/step: 55.00ms
+Step 20 - Loss: 7.1250 - time/step: 54.96ms
+Step 21 - Loss: 12.1250 - time/step: 54.93ms
+Step 22 - Loss: 8.8750 - time/step: 54.84ms
+Step 23 - Loss: 11.0625 - time/step: 55.16ms
+Step 24 - Loss: 12.9375 - time/step: 52.59ms
+Step 25 - Loss: 9.5625 - time/step: 52.44ms
+Step 26 - Loss: 12.7500 - time/step: 52.46ms
+Step 27 - Loss: 10.1875 - time/step: 52.48ms
+Step 28 - Loss: 9.3750 - time/step: 52.48ms
+Step 29 - Loss: 11.1250 - time/step: 52.44ms
+Step 30 - Loss: 12.5000 - time/step: 52.41ms
+Step 31 - Loss: 6.0938 - time/step: 52.44ms
+Step 32 - Loss: 7.5625 - time/step: 52.44ms
+Step 33 - Loss: 12.8750 - time/step: 52.43ms
+Step 34 - Loss: 10.8125 - time/step: 54.10ms
+Step 35 - Loss: 7.0625 - time/step: 53.32ms
+Step 36 - Loss: 7.0938 - time/step: 52.44ms
+Step 37 - Loss: 8.5625 - time/step: 52.41ms
+Step 38 - Loss: 11.3750 - time/step: 52.40ms
+Step 39 - Loss: 8.6250 - time/step: 52.41ms
+Step 40 - Loss: 12.6250 - time/step: 52.40ms
+Step 41 - Loss: 12.1250 - time/step: 52.40ms
+Step 42 - Loss: 5.2188 - time/step: 52.45ms
+Step 43 - Loss: 12.3125 - time/step: 52.35ms
+Step 44 - Loss: 13.1250 - time/step: 52.37ms
+Step 45 - Loss: 11.7500 - time/step: 52.36ms
+Step 46 - Loss: 11.3125 - time/step: 52.38ms
+Step 47 - Loss: 12.4375 - time/step: 52.40ms
+Step 48 - Loss: 8.6250 - time/step: 52.42ms
+Step 49 - Loss: 5.5625 - time/step: 52.38ms
+Step 50 - Loss: 11.5000 - time/step: 52.40ms
+Step 51 - Loss: 11.5000 - time/step: 52.37ms
+Step 52 - Loss: 5.7188 - time/step: 52.56ms
+Step 53 - Loss: 7.6875 - time/step: 52.41ms
+Step 54 - Loss: 6.2812 - time/step: 52.43ms
+Step 55 - Loss: 12.0625 - time/step: 52.42ms
+Step 56 - Loss: 6.5000 - time/step: 52.36ms
+Step 57 - Loss: 12.1875 - time/step: 52.35ms
+Step 58 - Loss: 7.7188 - time/step: 52.38ms
+Step 59 - Loss: 5.2812 - time/step: 52.39ms
+Step 60 - Loss: 6.8438 - time/step: 52.36ms
+Training completed successfully in 43.16s (steps completed: 60)
+Saving parameter dict checkpoint to: runs/run_001/checkpoints/final/flax_model.msgpack
+✅ Model checkpoint saved.
+Retrieving run artifacts from TPU VM...
+Using scp batch size of 1.Attempting to SCP into 1 nodes with a total of 1 workers.
+SCP: Attempting to connect to worker 0...
+✅ Smoke test manifest saved and validated.

@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FullEvalReport",
+  "type": "object",
+  "properties": {
+    "run_id": { "type": "string" },
+    "test_split_size": { "type": "integer" },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "test_loss": { "type": "number" },
+        "accuracy": { "type": "number" },
+        "instruction_following_score": { "type": "number" },
+        "formatting_error_rate": { "type": "number" }
+      },
+      "required": ["test_loss", "accuracy", "instruction_following_score", "formatting_error_rate"]
+    },
+    "comparison_with_baseline": {
+      "type": "object",
+      "properties": {
+        "baseline_loss": { "type": "number" },
+        "improvement_pct": { "type": "number" },
+        "regressions_detected": { "type": "integer" }
+      },
+      "required": ["baseline_loss", "improvement_pct", "regressions_detected"]
+    },
+    "failure_count": { "type": "integer" }
+  },
+  "required": ["run_id", "test_split_size", "metrics", "comparison_with_baseline", "failure_count"]
+}
