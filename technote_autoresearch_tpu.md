@@ -98,25 +98,29 @@ Structuring the ML pipeline into modular agent roles coordinated by an orchestra
 
 ---
 
-## 6. GitHub Repository and Replication
+## 6. GitHub Repository and Autonomous Replication
 
-All codebase files, including the JAX model definitions, coordinates orchestrator, plotting helpers, and agent skills are hosted publicly. You can replicate this setup or integrate your parameters using the repository below:
+All codebase files, including the JAX model definitions, coordinates orchestrator, plotting helpers, and agent skills are hosted publicly.
 
 *   **GitHub Repository**: [https://github.com/deep-diver/llm-finetuning-dashboard](https://github.com/deep-diver/llm-finetuning-dashboard)
 
-### Quick Start
-To launch the coordinate ascent search locally or targeting your GCP account:
+### Quick Start via AntiGravity SDK
+Rather than manually executing individual trial scripts, you can command the **AntiGravity Orchestrator** to manage the entire workflow autonomously using the SDK or CLI.
 
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/deep-diver/llm-finetuning-dashboard.git
    cd llm-finetuning-dashboard
    ```
-2. **Execute Autoresearch**:
+
+2. **Define the Goal**:
+   Declare a high-level goal using the AntiGravity CLI (`agy`) or within your agent script:
    ```bash
-   python3 scripts/training/run_coordinate_ascent.py
+   agy goal "Run a 100-trial Coordinate Ascent search for LLaMA 3.2-1B on GCP TPU v5e, identify the optimal hyperparameter config, execute a 3-epoch full training run, and generate the final loss plots."
    ```
-3. **Plot Progress**:
+
+3. **Monitor Execution**:
+   The orchestrator will automatically spin up sub-agents to prepare datasets, handle compilation configs, deploy TPU VMs, recovery from OOM faults, and write local summaries. Monitor progress using:
    ```bash
-   python3 scripts/analysis/plot_coordinate_ascent.py
+   agy status
    ```
