@@ -10,21 +10,7 @@ This post describes an automated multi-agent architecture designed to orchestrat
 
 To decouple the fine-tuning workflow, we structured the pipeline into specialized execution components coordinated by a central orchestration engine. Each component is powered by a concrete, declarative **Agent Skill** defined within the project codebase.
 
-```mermaid
-graph TD
-    A[User Goal Definition] -->|Initialize| Orchestrator[Orchestration Engine]
-    Orchestrator --> B[Dataset Preparation Agent]
-    Orchestrator --> C[Training Config Agent]
-    Orchestrator --> D[Experiment Execution Agent]
-    Orchestrator --> E[Evaluation Agent]
-    Orchestrator --> F[Result Analysis Agent]
-    
-    B -->|Preprocessed Dataset| Orchestrator
-    C -->|Search Space & Parameter Config| Orchestrator
-    D -->|Distributed TPU Run & Outputs| Orchestrator
-    E -->|Validation Metrics| Orchestrator
-    F -->|Loss Convergence & Insights| Orchestrator
-```
+![Agent Workflow Diagram](https://raw.githubusercontent.com/deep-diver/llm-finetuning-dashboard/main/docs/assets/agent_workflow_diagram.jpg)
 
 ### Agent Roles and Underlying Skills
 
