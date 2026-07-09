@@ -1,8 +1,5 @@
 # Automating the LLM Fine-Tuning Lifecycle on GCP TPU v5e via Multi-Agent Workflows
 
-> **Author**: Engineering & Infrastructure Team  
-> **Tags**: `Distributed Training`, `Multi-Agent System`, `TPU v5e`, `JAX/Flax`, `LLaMA-3`
-
 Fine-tuning large language models (LLMs) is typically an iterative, resource-heavy process. It involves data preprocessing, tokenization, distributed hardware provisioning, trial execution, and metric analysis. Executing these steps manually introduces friction and slows research iteration.
 
 This post describes an automated multi-agent architecture designed to orchestrate the entire fine-tuning lifecycle of the LLaMA 3.2-1B-Instruct model on GCP TPU v5e using JAX/Flax. We outline how the system handles distributed state orchestration, hardware exceptions, and optimal hyperparameter convergence.
